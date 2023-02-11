@@ -1,0 +1,22 @@
+
+
+<div class="student p-5 ">
+    <div class="container">
+        <div class="text-center bg-gradient"style="color: rgb(158, 31, 31);"><h2 class="fs-1 fw-bolder pb-3"></h2></div>
+                <table class="table pt-5">
+                    <thead class="pb-3">
+                        <td>CourseName</td>
+                        <td>Link</td>
+                        
+                    </thead>
+                    <tbody  *ngFor="let Reference of ReferenceContainer">
+                        <tr>
+                            <td>{{Reference.courseName}}</td>
+                            <td><a href="{{Reference.LinkReference}}" class=" text-decoration-none text-info" target="_blank">follow</a></td>
+                            
+                        </tr> 
+                    </tbody>
+                </table>
+    
+    </div>
+    </div>

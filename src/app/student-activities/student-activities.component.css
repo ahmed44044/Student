@@ -1,0 +1,26 @@
+.card {
+
+    box-shadow: 10px 10px 20px rgb(118, 118, 172) !important;
+    border-radius: 0% 0% 8px 8px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .1);
+
+}
+
+
+img {
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+}
+
+.title {
+    text-align: center;
+    color: rgb(53, 53, 128);
+    text-shadow: 10px 10px 5px rgb(118, 118, 172);
+
+}
+
+.title h2 {
+    font-weight: bold;
+}

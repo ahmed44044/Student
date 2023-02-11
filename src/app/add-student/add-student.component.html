@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="fs-1" style="color: blue;"> Add-Student</h1>
+    <h4 class="text-danger" >{{apidata}}</h4>
+    <form [formGroup]=" StudentForm" (ngSubmit)="sendData(StudentForm)" >
+   
+    <!-- <label for="NationalID">NationalID:</label> -->
+    <input type="text" placeholder="NationalID" formControlName="NationalID"  class="form-control p-2 fs-4 my-4">
+    <div *ngIf="StudentForm.get('NationalID')?.errors && StudentForm.get('NationalID')?.touched">
+        <p *ngIf="StudentForm.get('NationalID')?.getError('required')" class="alert alert-danger py-1">NationalID is required</p>
+        <p *ngIf="StudentForm.get('NationalID')?.getError('pattern')" class="alert alert-danger py-1">NationalID is wrong ,plz enter correct national Id</p>
+    </div>
+   
+
+
+   
+    <button  class="btn btn-info fs-4">AddStudent</button>
+</form>
+   </div>

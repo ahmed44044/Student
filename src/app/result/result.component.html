@@ -1,0 +1,29 @@
+<div class="container">
+    <h1 style="color: rgb(158, 31, 31);" class="fs-1 fw-bold text-center"> Add-Result</h1>
+    <h4 class="text-danger" >{{apidata}}</h4>
+    <form [formGroup]=" ResultForm" (ngSubmit)="sendData(ResultForm)" >
+   
+    <label class="fs-2 fw-bold" style="color: rgb(28, 28, 155);" for="">Degree</label>
+
+    <input formControlName="Degree" class="form-control p-2 my-3">
+    <!-- <p *ngIf="ResultForm.controls['Degree']?.errors?.['required'] && ResultForm.controls['Degree']?.touched "
+    class="text-danger">please fill this fieled</p> -->
+    <div *ngIf="ResultForm.get('Degree')?.errors && ResultForm.get('Degree')?.touched">
+        <p *ngIf="ResultForm.get('Degree')?.getError('required')" class="alert alert-danger py-1">Degree is required</p>
+    
+    </div>
+
+    <label class="fs-2 fw-bold" style="color: rgb(28, 28, 155);" for="">subjectName</label>
+        
+    <input formControlName="subjectName" class="form-control p-2 my-3">
+    <div *ngIf="ResultForm.get('subjectName')?.errors && ResultForm.get('subjectName')?.touched">
+        <p *ngIf="ResultForm.get('subjectName')?.getError('required')" class="alert alert-danger py-1">subjectName is required</p>
+        <p *ngIf="ResultForm.get('subjectName')?.getError('pattern')" class="alert alert-danger py-1"> mplease choice on of Compulsory course or Elective Course </p>
+    </div>
+   
+
+
+   
+    <button  class="btn btn-info fs-4">Add-Result</button>
+</form>
+   </div>

@@ -1,0 +1,102 @@
+<nav class="navbar bg-dark  navbar-expand-lg mx-5 m-2 shadow-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white  fs-6" href="#">Faculty of Science</a>
+      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon  bg-body text-black"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul *ngIf="userLogin =='User'" class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+            <li class="nav-item">
+                <a class="nav-link  fs-6" routerLinkActive="bg-danger" routerLink="home">Home</a>
+              </li>
+        
+              <li class="nav-item">
+                <a class="nav-link  fs-6" routerLinkActive="bg-danger" routerLink="pepole">Course</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link  fs-6" routerLinkActive="bg-danger" routerLink="about">Show-Courses</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link  fs-6" routerLinkActive="bg-danger" routerLink="network">Show-Result</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link  fs-6 active"  routerLinkActive="bg-danger" routerLink="complaints">Complaints</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link  fs-6 active"  routerLinkActive="bg-danger" routerLink="studentActivities">StudentActivities</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link  fs-6 active"  routerLinkActive="bg-danger" routerLink="ShowScientificReference">ScientificReference</a>
+              </li>
+          
+        
+        </ul>
+        <ul *ngIf="userLogin =='Admin'"  class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link  fs-6" routerLinkActive="bg-danger" routerLink="movies">WelcomePage</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link  fs-6" routerLinkActive="bg-danger" routerLink="addStu">AddStudent</a>
+            </li>
+      
+            <li class="nav-item dropdown">
+              <a class="nav-link  fs-6 dropdown-toggle" routerLinkActive="bg-danger" routerLink="allStudent"id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                allStudent
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item  fs-6" routerLinkActive="bg-danger" routerLink="StudentLevel1">StudentLevel1</a></li>
+                <li><a class="dropdown-item  fs-6"  routerLinkActive="bg-danger" routerLink="StudentLevel2">StudentLevel2</a></li>
+              
+                <li><a class="dropdown-item  fs-6" routerLinkActive="bg-danger" routerLink="StudentLevel3">StudentLevel3</a></li>
+                <li><a class="dropdown-item  fs-6" routerLinkActive="bg-danger" routerLink="StudentLevel4">StudentLevel4</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle  fs-6" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" routerLinkActive="bg-danger" routerLink="addCourseLev1">AddCourseListLev1
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item  fs-6" routerLinkActive="bg-danger" routerLink="addCourseLev2">AddCourseListLev2</a></li>
+                <li><a class="dropdown-item  fs-6" routerLinkActive="bg-danger" routerLink="addCourseLev3">AddCourseListLev3</a></li>
+                <li><a class="dropdown-item  fs-6" routerLinkActive="bg-danger" routerLink="addCourseLev4">AddCourseListLev4</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  fs-6" routerLinkActive="bg-danger" routerLink="ScientificReference">ScientificReference</a>
+            </li>
+  
+      </ul>
+
+      
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link  fs-6 active"  routerLinkActive="bg-danger" routerLink="info">Show-Info</a>
+          </li>
+            <li class="nav-item nav-icon d-flex align-items-center">
+                <i ><a href="https://www.facebook.com/profile.php?id=100067424630144&mibextid=ZbWKwL" target="_blank"  class="fab fa-facebook  mx-2"></a></i>
+                <i><a href="https://youtube.com/@user-jn9bt6qu7x" target="_blank"  class="fab fa-youtube mx-2"></a></i>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link  fs-6" routerLinkActive="bg-danger" routerLink="register">register </a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link  fs-6" routerLinkActive="bg-danger" routerLink="login">login</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link  fs-6" (click)="logOut()">logout</a>
+               </li>
+         
+       
+         
+        
+        </ul>
+      </div>
+    </div>
+  </nav> 

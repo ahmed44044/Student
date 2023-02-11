@@ -1,0 +1,100 @@
+  <div id="signup">
+    <div class="container">
+        <div class="form ">
+            <h1 class="fs-1 fw-bolder text-center" style="color: rgb(255, 255, 255);">  SignUp </h1>
+        <h4 class="text-danger" >{{apidata}}</h4>
+            <form [formGroup]=" registerationForm" (ngSubmit)="sendData(registerationForm)" >
+                <!-- <label for="">userName</label> -->
+            
+                <input formControlName="userName" placeholder="userName" class="form-control fs-5  my-3">
+                    <p *ngIf="registerationForm.controls['userName']?.errors?.['required'] && registerationForm.controls['userName']?.touched "
+                    class="alert alert-danger py-1">please fill this fieled</p>
+            
+                    <p *ngIf="registerationForm.controls['userName']?.errors?.['minlength'] && registerationForm.controls['userName']?.touched " 
+                    class="alert alert-danger py-1">userName must be at least 3 chars</p>
+            
+                    <p *ngIf="registerationForm.controls['userName']?.errors?.['maxlength'] && registerationForm.controls['userName']?.touched " 
+                    class="alert alert-danger py-1">userName must be 10 chars</p>
+               
+            
+                <!-- <label for="">age</label> -->
+              
+                <input formControlName="age" placeholder="age" class="form-control fs-5 my-3">
+                <p *ngIf="registerationForm.controls['age']?.errors?.['required'] && registerationForm.controls['age']?.touched "
+                class="alert alert-danger py-1">please fill this fieled</p>
+            
+                <p *ngIf="registerationForm.controls['age']?.errors?.['min'] && registerationForm.controls['age']?.touched " 
+                class="alert alert-danger py-1">your age must be greater than 18 </p>
+            
+                <p *ngIf="registerationForm.controls['age']?.errors?.['max'] && registerationForm.controls['age']?.touched " 
+                class="alert alert-danger py-1">your age must be 23 </p>
+            
+                <!-- <label for="">email</label> -->
+            
+                <input type="email" formControlName="email" placeholder="email" class="form-control fs-5  my-3">
+                <p *ngIf="registerationForm.controls['email']?.errors?.['required'] && registerationForm.controls['email']?.touched "
+                class="alert alert-danger py-1">please fill this fieled</p>
+            
+                <p *ngIf="registerationForm.controls['email']?.errors?.['email'] && registerationForm.controls['email']?.touched " 
+                class="alert alert-danger py-1">your email must be write by method 'AhmedMAhmoud112@gmail.com'</p>
+            
+            
+                <!-- <label for="">password</label> -->
+            
+                <input  type="password" placeholder="password" formControlName="password" class="form-control fs-5 my-4">
+                <p *ngIf="registerationForm.controls['password']?.errors?.['required'] && registerationForm.controls['password']?.touched "
+                class="alert alert-danger py-1">please fill this fieled</p>
+            
+                <p *ngIf="registerationForm.controls['password']?.errors?.['minlength'] && registerationForm.controls['password']?.touched " 
+                class="alert alert-danger py-1">password name must be at least 8</p>
+            
+             
+                <p *ngIf="registerationForm.controls['password']?.errors?.['pattern'] && registerationForm.controls['password']?.touched " 
+                class="alert alert-danger py-1">password must be start with a capital letter </p>
+            
+                <!-- <label for="cPassword">cPassword:</label> -->
+                    <input type="password" placeholder="cPassword" formControlName="cPassword"  class="form-control fs-5  my-4">
+                    <p *ngIf="registerationForm.controls['cPassword']?.errors?.['required'] && registerationForm.controls['cPassword']?.touched "
+                    class="alert alert-danger py-1">please fill this fieled , plz enter cPassword match password</p>
+                
+                    <p *ngIf="registerationForm.controls['cPassword']?.errors?.['minlength'] && registerationForm.controls['cPassword']?.touched " 
+                    class="alert alert-danger py-1">cPassword name must be at least 8,plz enter cPassword match password</p>
+                
+                 
+                    <p *ngIf="registerationForm.controls['cPassword']?.errors?.['pattern'] && registerationForm.controls['cPassword']?.touched " 
+                    class="alert alert-danger py-1">cPassword must be start with a capital letter,plz enter cPassword match password </p>
+            
+            
+                    <!-- <label for="level">level:</label> -->
+                    <input type="text" placeholder="Level" formControlName="level"  class="form-control fs-5  my-4">
+                    <div *ngIf="registerationForm.get('level')?.errors && registerationForm.get('level')?.touched">
+                        <p *ngIf="registerationForm.get('level')?.getError('required')" class="alert alert-danger py-1">level is required</p>
+                        <p *ngIf="registerationForm.get('level')?.getError('pattern')" class="alert alert-danger py-1"> must choice one level from 1 to 4 level </p>
+                    </div>
+            
+                    <!-- <label for="DepartmentName">DepartmentName:</label> -->
+                    <input type="text" placeholder="DepartmentName" formControlName="DepartmentName"  class="form-control fs-5  my-4">
+                    <div *ngIf="registerationForm.get('DepartmentName')?.errors && registerationForm.get('DepartmentName')?.touched">
+                        <p *ngIf="registerationForm.get('DepartmentName')?.getError('required')" class="alert alert-danger py-1">DepartmentName is required</p>
+                        
+                    </div>
+            
+                    <!-- <label for="NationalID">NationalID:</label> -->
+                    <input type="text" placeholder="NationalID" formControlName="NationalID"  class="form-control fs-5 my-4">
+                    <div *ngIf="registerationForm.get('NationalID')?.errors && registerationForm.get('NationalID')?.touched">
+                        <p *ngIf="registerationForm.get('NationalID')?.getError('required')" class="alert alert-danger py-1">NationalID is required</p>
+                        <p *ngIf="registerationForm.get('NationalID')?.getError('pattern')" class="alert alert-danger py-1">NationalID is wrong ,plz enter correct national Id</p>
+                    </div>
+            
+                <!-- <button  class="btn btn-info">register</button> -->
+                <button type="submit"  class="btn btn-info fs-4">
+                    <span *ngIf="isLoading"><i class="fas fa-spinner fa-spin"></i></span>
+                    <span class="fs-4" *ngIf="!isLoading">SignUp</span>
+                    <!-- {{isLoading?<i class="fas fa-spinner fa-spin"></i>':'Register}} -->
+                </button>
+              
+            </form>
+        </div>
+     
+       </div>
+  </div>

@@ -1,0 +1,13 @@
+.student{
+    background-color: rgb(255, 255, 255);
+}
+.table tbody td{
+    color:rgb(0, 0, 0);
+    font-size: 39px;
+    font-weight: bold;
+}
+thead td{
+    color: rgb(28, 28, 187);
+    font-size: 40px;
+    font-weight: bolder;
+}

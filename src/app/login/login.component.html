@@ -1,0 +1,35 @@
+<div id="login">
+    <div class="container">
+        <div class="form shadow-lg" >
+            <h1 class="fs-1 fw-bolder text-center" style="color: rgb(158, 31, 31);"> Login </h1>
+            <h4 class="text-danger" >{{apidata}}</h4>
+            <form  [formGroup]=" loginForm" (ngSubmit)="sendData(loginForm)" >
+           
+            <label class="fs-2 fw-bold text-white"  for="">Email</label>
+        
+            <input type="email" formControlName="email" class="form-control  fw-bold p-2 my-3">
+            <p *ngIf="loginForm.controls['email']?.errors?.['required'] && loginForm.controls['email']?.touched "
+            class="text-danger">please fill this fieled</p>
+        
+            <p *ngIf="loginForm.controls['email']?.errors?.['email'] && loginForm.controls['email']?.touched " 
+            class="text-danger">your email must be write by method 'AhmedMAhmoud112@gmail.com'</p>
+        
+            <label class="fs-2 fw-bold text-white" for="">Password</label>
+                
+            <input type="password" formControlName="password" class="form-control  fw-bold p-2 my-3">
+            <p *ngIf="loginForm.controls['password']?.errors?.['required'] && loginForm.controls['password']?.touched "
+            class="text-danger">please fill this fieled</p>
+        
+            <p *ngIf="loginForm.controls['password']?.errors?.['minlength'] && loginForm.controls['password']?.touched " 
+            class="text-danger">password name must be at least 8,password wrong</p>
+        
+         
+            <p *ngIf="loginForm.controls['password']?.errors?.['pattern'] && loginForm.controls['password']?.touched " 
+            class="text-danger">password must be start with a capital letter </p>
+            
+            <button  class="btn btn-info fs-4 border-2">login</button>
+        </form>
+        </div>
+       
+       </div>
+</div>

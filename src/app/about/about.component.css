@@ -1,0 +1,16 @@
+
+.course{
+    background-color: rgb(230, 221, 221);
+}
+.table tbody td{
+    color:rgb(0, 0, 0);
+    font-size: 28px;
+}
+thead td{
+    color: black;
+    font-size: 26px;
+}
+
+p{
+    color: rgb(28, 28, 187);
+}

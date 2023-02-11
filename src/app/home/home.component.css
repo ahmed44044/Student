@@ -1,0 +1,27 @@
+ 
+.image{
+    width: 250px;
+    height: 250px;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+}
+img{
+border-radius: 50%;
+}
+b i{
+    color: rgb(19, 163, 219);
+}
+
+.student{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.student h3{
+    color:rgb(23, 58, 212);
+}
+.student i{
+    color: black;
+}

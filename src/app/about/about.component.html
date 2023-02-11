@@ -1,0 +1,27 @@
+
+<div class="course p-5 ">
+<div class="container">
+    <h4 class="text-danger" >{{apidata}}</h4>
+ <div class="d-flex justify-content-between">
+    <p class="text-start fw-bold fs-2">StudentUserName:<i class=" p-2  text-black fs-3 ">{{Student.userName}}</i></p>
+    <p class="text-end fw-bold fs-2">DepartmentName:<i class="p-2 text-black fs-3 ">{{Student.DepartmentName}}</i></p>
+ </div>
+            <table class="table pt-5">
+                <thead class="p-3">
+                    <td class="text-primary fs-2 fw-bold">courseName</td>
+                    <td class="text-primary fs-2 fw-bold">Hours</td>
+                    <td class="text-primary fs-2 fw-bold">courseStatus</td>
+                </thead>
+                <tbody  *ngFor="let course of courseContainer">
+                    <tr>
+                        <td>{{course.course}}</td>
+                        <td>{{course.numberOfHoursOfCourse}}</td>
+                        <td>{{course.courseStatus}}</td>
+                        <td><button  [routerLink]="['/updateCourse',course._id]" class="btn btn-outline-primary shadow-lg fs-4">update</button></td>
+                        <td><button  class="btn btn-outline-danger shadow-lg fs-4" (click)="getId(course._id)">delete </button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+</div>
+</div>

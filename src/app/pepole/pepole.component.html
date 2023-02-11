@@ -1,0 +1,59 @@
+
+    <div class="container">
+        <h1 class="addcourse"> Add-Course</h1>
+        <h4 class="text-danger" >{{apidata}}</h4>
+        <form [formGroup]=" courseForm" (ngSubmit)="sendData(courseForm)" >
+       
+        <label class="fs-3 fw-bold text-primary " for="">course</label>
+    
+        <input formControlName="course" class="form-control my-3">
+        <!-- <p *ngIf="courseForm.controls['course']?.errors?.['required'] && courseForm.controls['course']?.touched "
+        class="text-danger">please fill this fieled</p> -->
+        <div *ngIf="courseForm.get('course')?.errors && courseForm.get('course')?.touched">
+            <p *ngIf="courseForm.get('course')?.getError('required')" class="alert alert-danger py-1">course is required</p>
+        
+        </div>
+    
+        <label class="fs-3 fw-bold text-primary" for="">courseStatus</label>
+            
+        <input formControlName="courseStatus" class="form-control my-3">
+        <div *ngIf="courseForm.get('courseStatus')?.errors && courseForm.get('courseStatus')?.touched">
+            <p *ngIf="courseForm.get('courseStatus')?.getError('required')" class="alert alert-danger py-1">courseStatus is required</p>
+            <p *ngIf="courseForm.get('courseStatus')?.getError('pattern')" class="alert alert-danger py-1"> mplease choice on of Compulsory course or Elective Course </p>
+        </div>
+       
+        <label class="fs-3 fw-bold text-primary" for="">courseCode</label>
+            
+        <input formControlName="courseCode" class="form-control my-3">
+        <!-- <p *ngIf="courseForm.controls['courseCode']?.errors?.['required'] && courseForm.controls['courseCode']?.touched "
+        class="text-danger">please fill this fieled</p> -->
+        <div *ngIf="courseForm.get('courseCode')?.errors && courseForm.get('courseCode')?.touched">
+            <p *ngIf="courseForm.get('courseCode')?.getError('required')" class="alert alert-danger py-1">courseCode is required</p>
+        
+        </div>
+        <label class="fs-3 fw-bold text-primary" for="">courseRequirement</label>
+            
+        <input formControlName="courseRequirement" class="form-control my-3">
+        <!-- <p *ngIf="courseForm.controls['courseRequirement']?.errors?.['required'] && courseForm.controls['courseRequirement']?.touched "
+        class="text-danger">please fill this fieled</p> -->
+        <div *ngIf="courseForm.get('courseRequirement')?.errors && courseForm.get('courseRequirement')?.touched">
+            <p *ngIf="courseForm.get('courseRequirement')?.getError('required')" class="alert alert-danger py-1">courseRequirement is required</p>
+        
+        </div>
+        
+    
+        <label class="fs-3 fw-bold  text-primary" for="">numberOfHoursOfCourse</label>
+            
+        <input formControlName="numberOfHoursOfCourse" class="form-control my-3">
+        <!-- <p *ngIf="courseForm.controls['numberOfHoursOfCourse']?.errors?.['required'] && courseForm.controls['numberOfHoursOfCourse']?.touched "
+        class="text-danger">please fill this fieled</p> -->
+
+        <div *ngIf="courseForm.get('numberOfHoursOfCourse')?.errors && courseForm.get('numberOfHoursOfCourse')?.touched">
+            <p *ngIf="courseForm.get('numberOfHoursOfCourse')?.getError('required')" class="alert alert-danger py-1">numberOfHoursOfCourse is required</p>
+            <p *ngIf="courseForm.get('numberOfHoursOfCourse')?.getError('pattern')" class="alert alert-danger py-1"> please choice on of 2 hours or 3 hours </p>
+        </div>
+    
+       
+        <button  class="btn btn-info fs-4">AddCourse</button>
+    </form>
+       </div>

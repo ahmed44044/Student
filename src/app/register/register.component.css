@@ -1,0 +1,26 @@
+#signup{
+    min-height: 100vh;
+    background-image: url(../../assets/img/pexels-veeterzy-303383.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+}
+.form{
+    /* padding-top: 100px; */
+    margin-top: 88px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color:rgba(27, 9, 9, 0.3);
+    text-align: center;
+    flex-direction: column;
+   border-radius: 10%;
+   padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+input{
+    width: 500px;
+}

@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 style="color: rgb(158, 31, 31);" class="text-center fs-1 fw-bold"> update_Result</h1>
+    <h4 class="text-danger" >{{apidata}}</h4>
+    <form [formGroup]=" ResultForm" (ngSubmit)="sendData(ResultForm)" >
+   
+    <label class="fs-1 fw-bold" style="color: rgb(28, 28, 155);" for="">Degree</label>
+
+    <input formControlName="Degree" class="form-control p-2 my-3">
+    <p *ngIf="ResultForm.controls['Degree']?.errors?.['required'] && ResultForm.controls['Degree']?.touched "
+    class="text-danger"></p>
+    <div *ngIf="ResultForm.get('Degree')?.errors && ResultForm.get('Degree')?.touched">
+        <p *ngIf="ResultForm.get('Degree')?.getError('required')" class="alert alert-danger py-1">Degree is required</p>
+    
+    </div>
+
+
+    <button  class="btn btn-info fs-4">updateResult</button>
+</form>
+   </div>

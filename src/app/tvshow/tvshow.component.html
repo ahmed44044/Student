@@ -1,0 +1,23 @@
+
+<div class="student p-5 ">
+    <div class="container">
+        <div class="text-center bg-gradient " style="color: rgb(158, 31, 31);"><h2 class="fs-1 fw-bolder pb-3">AllStudent</h2></div>
+                <table class="table pt-5">
+                    <thead class="pb-3">
+                        <td>StudentName</td>
+                        <td>level</td>
+                        <td>DepartmentName</td>
+                    </thead>
+                    <tbody  *ngFor="let student of studentContainer">
+                        <tr>
+                            <td>{{student.userName}}</td>
+                            <td>{{student.level}}</td>
+                            <td>{{student.DepartmentName}}</td>
+                            <td><button [routerLink]="['/ShowResult',student.userName,student._id]" (click)="getId(student._id)" class="btn btn-outline-info fs-4 fw-bold shadow-lg">Show Result</button></td>
+                            <td><button  [routerLink]="['/Result',student.userName,student._id]" class="btn btn-outline-success fs-4 fw-bold  shadow-lg" (click)="getId(student._id)">Add-Result </button></td>
+                        </tr>
+                    </tbody>
+                </table>
+    
+    </div>
+    </div>

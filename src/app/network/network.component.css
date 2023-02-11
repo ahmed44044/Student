@@ -1,0 +1,12 @@
+
+.result{
+    background-color: rgb(214, 212, 212);
+}
+.table tbody td{
+    color:aliceblue;
+    font-size: 23px;
+}
+thead td{
+    color: rgb(167, 24, 24);
+    font-size: 26px;
+}

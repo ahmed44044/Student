@@ -1,0 +1,29 @@
+<div class="container">
+    <h1 style="color: rgb(158, 31, 31);" class="fs-1 fw-bold text-center"> Add-ScientificReference</h1>
+    <h4 class="text-danger" >{{apidata}}</h4>
+    <form [formGroup]="ScientificReferenceForm" (ngSubmit)="sendData(ScientificReferenceForm)" >
+   
+    <label class="fs-2 fw-bold" style="color: rgb(28, 28, 155);" for="">LinkReference</label>
+
+    <input formControlName="LinkReference" class="form-control p-2 my-3">
+    <!-- <p *ngIf="ScientificReferenceForm.controls['LinkReference']?.errors?.['required'] && ScientificReferenceForm.controls['LinkReference']?.touched "
+    class="text-danger">please fill this fieled</p> -->
+    <div *ngIf="ScientificReferenceForm.get('LinkReference')?.errors && ScientificReferenceForm.get('LinkReference')?.touched">
+        <p *ngIf="ScientificReferenceForm.get('LinkReference')?.getError('required')" class="alert alert-danger py-1">LinkReference is required</p>
+    
+    </div>
+
+    <label class="fs-2 fw-bold" style="color: rgb(28, 28, 155);" for="">subjectName</label>
+        
+    <input formControlName="courseName" class="form-control p-2 my-3">
+    <div *ngIf="ScientificReferenceForm.get('courseName')?.errors && ScientificReferenceForm.get('courseName')?.touched">
+        <p *ngIf="ScientificReferenceForm.get('courseName')?.getError('required')" class="alert alert-danger py-1">courseName is required</p>
+        <p *ngIf="ScientificReferenceForm.get('courseName')?.getError('pattern')" class="alert alert-danger py-1"> mplease choice on of Compulsory course or Elective Course </p>
+    </div>
+   
+
+
+   
+    <button  class="btn btn-info fs-4">Add-Link</button>
+</form>
+   </div>
